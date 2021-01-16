@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>啦啦啦</title>
+    <meta charset="UTF-8">
+    <title>啦啦啦</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.0.2/vue.cjs.js"></script>
 </head>
 <body>
 <img id="img" src="" alt="">
 </body>
+<script>
+    // 自定义事件，自定义回调
+    let cb = $.Callbacks()
+
+    cb.add(function (info) {
+        console.log('fn1', info)
+    })
+
+    cb.add(function (info) {
+        console.log('fn2', info)
+    })
+
+    cb.add(function (info) {
+        console.log('fn3', info)
+    })
+
+    cb.fire('show')
+
+</script>
 </html>
