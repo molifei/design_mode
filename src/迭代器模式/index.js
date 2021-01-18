@@ -1,37 +1,16 @@
-class Iterator {
-  constructor(container) {
-    this.list = container.list
-    this.index = 0
-  }
-
-  next() {
-    if (this.hasNext()) {
-      return this.list[this.index++]
-    }
-    return null
-  }
-
-  hasNext() {
-    return this.index < this.list.length;
-  }
-
+function* testGenerator() {
+    yield 'one'
+    yield 'two'
+    yield 'three'
+    return 'over'
 }
 
-class Container {
-  constructor(list) {
-    this.list = list
-  }
+let res = testGenerator()
+console.log(res)
 
-  // 生成遍历器
-  getIterator() {
-    return new Iterator(this)
-  }
-}
+let item = {done: false}
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-let cn = new Container(arr)
-let each = cn.getIterator()
-
-while (each.hasNext()) {
-  console.log(each.next())
+while (!item.done) {
+    item = res.next()
+    console.log(item.value)
 }
