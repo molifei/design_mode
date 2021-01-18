@@ -2,7 +2,7 @@ const path = require("path")
 const HtmlWebapckPlugin = require("html-webpack-plugin")
 
 module.exports = {
-  entry: "./src/迭代器模式/t.js",
+  entry: "./src/状态模式/index.js",
   output: {
     // path: path.join(__dirname, 'dist'),
     // filename: "[name].min.js",
